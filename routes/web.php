@@ -15,9 +15,14 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/contact',  'ContactController@index');
+Route::post('/contact',  'ContactController@send')->name('contact');
+
+Route::get('/about', function () {
+    return view('about');
 });
+
+Route::get('/news',  'NewsController@index');
 
 Route::get('/admin', function () {
     return view('admin');

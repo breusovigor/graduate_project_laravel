@@ -36,30 +36,31 @@
                 </div>
 
                 <ul class="topsocial">
-                    <li><a href="https://www.linkedin.com/in/igor-breusov-032441135/"><i class="fa fa-linkedin-square"></i>
+                    <li><a href="https://www.linkedin.com/in/igor-breusov-032441135/"><i
+                                    class="fa fa-linkedin-square"></i>
                             <div class="tooltip">LinkedIn</div>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i>
+                    <li><a href="https://www.facebook.com/bruce18021993"><i class="fa fa-facebook"></i>
                             <div class="tooltip">Facebook</div>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa fa-twitter"></i>
+                    <li><a href="https://twitter.com/bruce18021993"><i class="fa fa-twitter"></i>
                             <div class="tooltip">Twitter</div>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i>
+                    <li><a href="https://plus.google.com/u/0/100793117405853628080"><i class="fa fa-google-plus"></i>
                             <div class="tooltip">Google+</div>
                         </a>
                     </li>
                 </ul>
 
                 <ul class="topnav">
-                    <li><a href="index.html" class="current">Главная</a>
+                    <li><a href="/" class="current">Главная</a>
                     </li>
-                    <li><a href="about.html">О компании</a>
+                    <li><a href="/about">О компании</a>
                     </li>
-                    <li><a href="portfolio.html" class="drop">Проекты</a>
+                    <li><a href="/portfolio" class="drop">Проекты</a>
                         <ul>
                             <li><a href="#">Название проекта №1</a></li>
                             <li><a href="#">Название проекта №2</a></li>
@@ -68,11 +69,11 @@
                             <li><a href="#">Название проекта №5</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog.html" class="drop">Новости</a>
+                    <li><a href="/news" class="drop">Новости</a>
                         <ul>
-                            <li><a href="blog.html">Категории</a>
+                            <li><a href="/news">Категории</a>
                             </li>
-                            <li><a href="blog-post.html">Описание новости</a>
+                            <li><a href="/news">Описание новости</a>
                             </li>
                         </ul>
                     </li>
@@ -223,17 +224,6 @@
                             </div>
                         </div>
                         <div class="column-one-fourth">
-
-                            <h3>Подписаться</h3>
-                            <div class="footer-newsletter">
-                                <form id="newsletter" name="newsletter" method="post" action="#">
-                                    <div class="container">
-                                        <input type="text" name="name" class="textbox" placeholder="Email Address">
-                                        <input type="submit" name="submit" id="submit" value="Готово"
-                                               class="button">
-                                    </div>
-                                </form>
-                            </div>
 
                             <h3>Ждем Вас</h3>
 
