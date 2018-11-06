@@ -9,11 +9,14 @@ class ContactController extends Controller
 {
     public function index()
     {
-        //dd($_POST);
-
         return view('contact');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * Method for send contact message with validation
+     */
     public function send(Request $request)
     {
 
@@ -43,6 +46,5 @@ class ContactController extends Controller
         $contact->message_text = $request->message;
         $contact->save();
         return view('contact');
-
     }
 }
