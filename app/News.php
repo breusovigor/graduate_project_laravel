@@ -17,4 +17,12 @@ class News extends Model
         'news_day'
     ];
 
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function getLastNews() {
+
+    }
 }

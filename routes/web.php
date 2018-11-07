@@ -22,9 +22,7 @@ Route::get('/about', function () {
 
 Route::get('/news',  'NewsController@index');
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/admin', 'AdminController@index');
 
 Auth::routes();
 

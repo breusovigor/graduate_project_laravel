@@ -166,17 +166,18 @@
                 <ul id="portfolio-carousel" class="slider-container">
 
                     <!-- One Fourth -->
-
+                    @foreach($news as $item)
                     <li class="column-one-fourth portfolio-item branding">
                         <!-- Image -->
-                        <a href="#" class="image-link"><img alt="" src="images\placeholders\preview1.jpg"
+                        <a href="#" class="image-link"><img alt="" src="{{$item->news_preview}}"
                                                             class="fullwidth">
                         </a>
                         <!-- Title -->
-                        <h3><a href="#">Название события</a></h3>
+                        <h3><a href="#">{{$item->news_title}}</a></h3>
                         <!-- Tags -->
                         <div class="tags">Категория</div>
                     </li>
+                    @endforeach
 
                     <!-- END One Fourth -->
 
