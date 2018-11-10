@@ -150,10 +150,9 @@
                         <!-- Title -->
                         <h3>Категории новостей</h3>
                         <!-- Category Links -->
-                        <a href="#">Название категории</a>
-                        <a href="#">Название категории</a>
-                        <a href="#">Название категории</a>
-                        <a href="#">Название категории</a>
+                        @foreach($categories as $category)
+                        <a href="#">{{$category->category_name}}</a>
+                        @endforeach
                     </div>
 
                     <!-- END Categories -->

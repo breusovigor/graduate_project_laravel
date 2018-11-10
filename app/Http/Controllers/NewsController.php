@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use App\Category;
+
 
 class NewsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
 
         $news = News::all();
-        //dd($news);
+        $categories = Category::all();
 
-        return view('news');
+
+        return view('news', ['news' => $news, 'categories' => $categories]);
     }
 }

@@ -10,11 +10,15 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-        $news = News::take(6)->get();
-        $category = Category::all();
+        $news = News::all();
+        foreach ($news as $item) {
+            $category = $item->category;
+        }
+        //$category = Category::all();
+        //dd($category);
 //        $news = News::find(1);
-        //dd($news);
 
-        return view('main', ['news' => $news]);
+
+        return view('main', ['news' => $news, 'category' => $category]);
     }
 }

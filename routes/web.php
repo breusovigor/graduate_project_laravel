@@ -22,7 +22,10 @@ Route::get('/about', function () {
 
 Route::get('/news',  'NewsController@index');
 
-Route::get('/admin', 'AdminController@index');
+Route::prefix('admin')->group(function () {
+    Route::get('news', 'AdminController@index');
+    Route::get('users', 'AdminController@index');
+});
 
 Auth::routes();
 

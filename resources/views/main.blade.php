@@ -175,7 +175,7 @@
                         <!-- Title -->
                         <h3><a href="#">{{$item->news_title}}</a></h3>
                         <!-- Tags -->
-                        <div class="tags">Категория</div>
+                        <div class="tags">{{$item->category->category_name}}</div>
                     </li>
                     @endforeach
 
