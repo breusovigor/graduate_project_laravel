@@ -6,18 +6,19 @@
     <meta name="viewport" content="initial-scale=1">
     <title>Wonde - универсальный бизнес шаблон сайта</title>
 
-    <link href="css\styles.css" rel="stylesheet">
-    <link href="css\font-awesome.css" rel="stylesheet">
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
 
-    <script type="text/javascript" src="js\jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js\common.js"></script>
-    <script type="text/javascript" src="js\jquery.carousel-main.min.js"></script>
-    <script type="text/javascript" src="js\jquery.carousel-content.min.js"></script>
-    <script type="text/javascript" src="js\home-slider-settings.js"></script>
-    <script type="text/javascript" src="js\carousel-portfolio-settings.js"></script>
-    <script type="text/javascript" src="js\carousel-blog-settings.js"></script>
-    <script type="text/javascript" src="js\carousel-testimonials-settings.js"></script>
-    <script type="text/javascript" src="js\carousel-clients-settings.js"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/common.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.carousel-main.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/portfolio-blog-slider-settings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.carousel-content.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/home-slider-settings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/carousel-portfolio-settings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/carousel-blog-settings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/carousel-testimonials-settings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/carousel-clients-settings.js')}}"></script>
 </head>
 
 <body class="light-bg home">
@@ -60,22 +61,9 @@
                     </li>
                     <li><a href="/about">О компании</a>
                     </li>
-                    <li><a href="/portfolio" class="drop">Проекты</a>
-                        <ul>
-                            <li><a href="#">Название проекта №1</a></li>
-                            <li><a href="#">Название проекта №2</a></li>
-                            <li><a href="#">Название проекта №3</a></li>
-                            <li><a href="#">Название проекта №4</a></li>
-                            <li><a href="#">Название проекта №5</a></li>
-                        </ul>
+                    <li><a href="/portfolio">Проекты</a>
                     </li>
-                    <li><a href="/news" class="drop">Новости</a>
-                        <ul>
-                            <li><a href="/news">Категории</a>
-                            </li>
-                            <li><a href="/news">Описание новости</a>
-                            </li>
-                        </ul>
+                    <li><a href="/news">Новости</a>
                     </li>
                     <li><a href="/contact">Контакты</a>
                     </li>
@@ -220,7 +208,7 @@
                         <div class="column-one-fourth">
                             <h3>Галерея</h3>
                             <div class="footer-flickr-container">
-                                <script type="text/javascript" src="js\flickr.js"></script>
+                                <script type="text/javascript" src="{{asset('js/flickr.js')}}"></script>
                             </div>
                         </div>
                         <div class="column-one-fourth">

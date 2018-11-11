@@ -17,110 +17,36 @@
 
                     <!-- Blog Post -->
 
+                    @foreach($news as $item)
                     <div class="blog-post">
                         <!-- Title -->
-                        <h1><a href="blog-post.html">Заголовок новости на сайте</a></h1>
+                        <h1><a href="blog-post.html">{{$item->news_title}}</a></h1>
                         <!-- Meta -->
                         <div class="blog-meta">
                             <div class="meta-item">
                                 <div class="meta-title published">Дата:</div>
-                                <a href="#">31 августа 2016</a></div>
+                                <a href="#">{{$item->created_at}}</a></div>
                             <div class="meta-item">
                                 <div class="meta-title views">Просмотры:</div>
-                                <a href="#">9</a></div>
+                                <a href="#">{{$item->views}}</a></div>
                             <div class="meta-item">
                                 <div class="meta-title comments">Комментарии:</div>
-                                <a href="#">2</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title tags">Теги</div>
-                                <a href="#">новости</a>, <a href="#">шаблоны</a></div>
+                                <a href="#"></a></div>
                         </div>
                         <!-- Image -->
-                        <a href="blog-post.html" class="media image-link"><img alt=""
-                                                                               src="images\placeholders\preview9.jpg"
+                        <a href="/news-post/{{$item->id}}" class="media image-link"><img alt=""
+                                                                               src="{{$item->news_preview}}"
                                                                                class="fullwidth"></a>
                         <!-- Excerpt -->
                         <div class="blog-content">
-                            <p>Позиционирование на рынке, как следует из вышесказанного, индуцирует анализ зарубежного
-                                опыта. Можно предположить, что точечное воздействие нетривиально. По сути, структура
-                                рынка очевидна не для всех...</p>
+                            <p>{{$item->news_short_content}}</p>
                             <!-- Read More Button -->
                             <a href="" class="button accent">Читать далее</a>
                         </div>
                     </div>
+                    @endforeach
 
                     <!-- END Blog Post -->
-
-
-                    <!-- Blog Post -->
-
-                    <div class="blog-post">
-                        <!-- Title -->
-                        <h1><a href="blog-post.html">Заголовок новости на сайте</a></h1>
-                        <!-- Meta -->
-                        <div class="blog-meta">
-                            <div class="meta-item">
-                                <div class="meta-title published">Дата:</div>
-                                <a href="#">31 августа 2016</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title views">Просмотры:</div>
-                                <a href="#">9</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title comments">Комментарии:</div>
-                                <a href="#">2</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title tags">Теги</div>
-                                <a href="#">новости</a>, <a href="#">шаблоны</a></div>
-                        </div>
-                        <!-- Excerpt -->
-                        <div class="blog-content">
-                            <p>Позиционирование на рынке, как следует из вышесказанного, индуцирует анализ зарубежного
-                                опыта. Можно предположить, что точечное воздействие нетривиально. По сути, структура
-                                рынка очевидна не для всех ...</p>
-                            <!-- Read More Button -->
-                            <a href="" class="button accent">Читать далее</a>
-                        </div>
-                    </div>
-
-                    <!-- END Blog Post -->
-
-
-                    <!-- Blog Post -->
-
-                    <div class="blog-post">
-                        <!-- Title -->
-                        <h1><a href="blog-post.html">Заголовок новости на сайте</a></h1>
-                        <!-- Meta -->
-                        <div class="blog-meta">
-                            <div class="meta-item">
-                                <div class="meta-title published">Дата:</div>
-                                <a href="#">31 августа 2016</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title views">Просмотры:</div>
-                                <a href="#">9</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title comments">Комментарии:</div>
-                                <a href="#">2</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title tags">Теги</div>
-                                <a href="#">новости</a>, <a href="#">шаблоны</a></div>
-                        </div>
-                        <!-- Image -->
-                        <a href="blog-post.html" class="media image-link"><img alt=""
-                                                                               src="images\placeholders\preview8.jpg"
-                                                                               class="fullwidth"></a>
-                        <!-- Excerpt -->
-                        <div class="blog-content">
-                            <p>Позиционирование на рынке, как следует из вышесказанного, индуцирует анализ зарубежного
-                                опыта. Можно предположить, что точечное воздействие нетривиально. По сути, структура
-                                рынка очевидна не для всех ...</p>
-                            <!-- Read More Button -->
-                            <a href="" class="button accent">Читать далее</a>
-                        </div>
-                    </div>
-
-                    <!-- END Blog Post -->
-
 
                     <!-- Navigation -->
 
@@ -221,51 +147,6 @@
                         </div>
 
                         <!-- END Post -->
-
-
-                        <!-- Post -->
-
-                        <div class="post">
-                            <!-- Image Column -->
-                            <div class="img-column">
-                                <a href="blog-post.html" class="image-link mini"><img alt=""
-                                                                                      src="images\placeholders\preview11-mini.jpg"
-                                                                                      class="fullwidth"></a>
-                            </div>
-                            <!-- Content Column -->
-                            <div class="content-column">
-                                <!-- Post Title -->
-                                <h3 class="sub-title"><a href="blog-post.html">Взаимодействие корпорации и клиента
-                                        экономит баинг и селлинг.</a></h3>
-                                <!-- Date -->
-                                <div class="date">31 августа 2016</div>
-                            </div>
-                        </div>
-
-                        <!-- END Post -->
-
-
-                        <!-- Post -->
-
-                        <div class="post">
-                            <!-- Image Column -->
-                            <div class="img-column">
-                                <a href="blog-post.html" class="image-link mini"><img alt=""
-                                                                                      src="images\placeholders\preview8-mini.jpg"
-                                                                                      class="fullwidth"></a>
-                            </div>
-                            <!-- Content Column -->
-                            <div class="content-column">
-                                <!-- Post Title -->
-                                <h3 class="sub-title"><a href="blog-post.html">Взаимодействие корпорации и клиента
-                                        экономит баинг и селлинг.</a></h3>
-                                <!-- Date -->
-                                <div class="date">31 августа 2016</div>
-                            </div>
-                        </div>
-
-                        <!-- END Post -->
-
 
                     </div>
 

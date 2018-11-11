@@ -23,6 +23,10 @@ class News extends Model
     {
         return $this->belongsTo('App\Category', 'category_id', 'id');
     }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment', 'id', 'news_id');
+    }
 
     public function getLastNews() {
 

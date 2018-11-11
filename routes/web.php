@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+use App\News;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +25,20 @@ Route::get('/about', function () {
 
 Route::get('/news',  'NewsController@index');
 
-Route::prefix('admin')->group(function () {
-    Route::get('news', 'AdminController@index');
-    Route::get('users', 'AdminController@index');
+Route::prefix('/admin')->group(function () {
+    Route::get('/news', function (Request $request) {
+        $news = News::paginate(5);
+        foreach ($news as $item) {
+        }
+        return view('admin', ['news' => $news]);
+    });
+    Route::get('news/create', 'AdminController@index');
+    Route::post('news/create', 'AdminController@create');
+    //Route::get('users', 'AdminController@index');
 });
+
+Route::get('news-post/{id}', 'NewsController@getOneNews');
+Route::post('news-post/{id}', 'CommentController@sendComment')->name('comment');
 
 Auth::routes();
 
