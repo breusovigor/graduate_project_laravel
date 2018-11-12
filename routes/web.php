@@ -29,9 +29,6 @@ Route::get('/news',  'NewsController@index');
 Route::prefix('/admin')->group(function () {
     Route::resource('/news', 'AdminController');
 
-//    Route::resources('news/create', 'AdminController');
-//    Route::post('/create', 'AdminController@create');
-    //Route::get('users', 'AdminController@index');
 });
 
 Route::get('news-post/{id}', 'NewsController@getOneNews');

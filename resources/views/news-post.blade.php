@@ -29,7 +29,7 @@
                                 <a href="#">{{$news->views}}</a></div>
                             <div class="meta-item">
                                 <div class="meta-title comments">Комментарии:</div>
-                                <a href="#">{{$comment->count()}}</a></div>
+                                <a href="news-post/{{$news->id}}">{{$comment->count()}}</a></div>
                         </div>
 
 

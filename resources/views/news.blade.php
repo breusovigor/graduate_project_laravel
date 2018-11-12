@@ -26,12 +26,7 @@
                             <div class="meta-item">
                                 <div class="meta-title published">Дата:</div>
                                 <a href="#">{{date('d.m.Y', strtotime($item->created_at))}}</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title views">Просмотры:</div>
-                                <a href="#">{{$item->views}}</a></div>
-                            <div class="meta-item">
-                                <div class="meta-title comments">Комментарии:</div>
-                                <a href="#"></a></div>
+
                         </div>
                         <!-- Image -->
                         <a href="/news-post/{{$item->id}}" class="media image-link"><img alt=""

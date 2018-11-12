@@ -13,7 +13,7 @@ class NewsController extends Controller
     public function index(Request $request)
     {
 
-        $news = News::all();
+        $news = News::paginate(5);
         $categories = Category::all();
         $randomNews = News::all()->random(2);
         $lastNews = News::latest()->limit(1)->get();

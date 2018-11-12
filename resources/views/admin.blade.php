@@ -104,6 +104,16 @@
     table.table td a.delete {
         color: #F44336;
     }
+    input.delete {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        background: #F44336;
+        color: #fff;
+        border:0 none;
+        margin-left: 5px;
+    }
     table.table td i {
         font-size: 10px;
     }
@@ -209,7 +219,7 @@ $(document).ready(function(){
                 <tbody>
                 @foreach($news as $item)
                     <tr>
-
+                        @csrf
                         <td>{{$item->id}}</td>
                         <td></td>
                         <td></td>
@@ -224,7 +234,11 @@ $(document).ready(function(){
                         <td>{{$item->news_views}}</td>
 						<td>
 							<a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-							<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            <form action="{{route('news.destroy', $item->id)}}" method="post">
+                                @csrf
+                                {!! method_field('delete') !!}
+                                <input type="submit" name="delete" class="delete" value="">
+                            </form>
 						</td>
                     </tr>
                 @endforeach
