@@ -15,16 +15,31 @@ class NewsController extends Controller
 
         $news = News::all();
         $categories = Category::all();
-
-
-        return view('news', ['news' => $news, 'categories' => $categories]);
+        $randomNews = News::all()->random(2);
+        $lastNews = News::latest()->limit(1)->get();
+        return view('news',
+            [
+                'news' => $news,
+                'categories' => $categories,
+                'randomNews' => $randomNews,
+                'lastNews' => $lastNews,
+            ]);
     }
 
     public function getOneNews($id)
     {
         $news = News::find($id);
         $categories = Category::all();
+        $randomNews = News::all()->random(2);
         $comment = Comment::where('news_id', '=', $id)->get();
-        return view('news-post', ['news' => $news, 'categories' => $categories, 'comment' => $comment]);
+        $lastNews = News::latest()->limit(1)->get();
+        return view('news-post',
+            [
+                'news' => $news,
+                'categories' => $categories,
+                'comment' => $comment,
+                'randomNews' => $randomNews,
+                'lastNews' => $lastNews,
+            ]);
     }
 }

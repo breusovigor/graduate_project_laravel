@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use App\News;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view('contact');
+        $randomNews = News::all()->random(2);
+        return view('contact', ['randomNews' => $randomNews]);
     }
 
     /**
@@ -45,6 +47,8 @@ class ContactController extends Controller
         $contact->phone = $request->phone;
         $contact->message_text = $request->message;
         $contact->save();
-        return view('contact');
+
+        $randomNews = News::all()->random(2);
+        return view('contact', ['randomNews' => $randomNews]);
     }
 }

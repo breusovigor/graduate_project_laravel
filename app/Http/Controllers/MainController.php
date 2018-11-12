@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\Category;
+use App\Comment;
 
 class MainController extends Controller
 {
@@ -14,11 +15,18 @@ class MainController extends Controller
         foreach ($news as $item) {
             $category = $item->category;
         }
-        //$category = Category::all();
-        //dd($category);
-//        $news = News::find(1);
+        $lastNews = News::latest()->limit(6)->get()->reverse();
+        $randomNews = News::all()->random(2);
+        $comment = Comment::all()->random(5);
 
 
-        return view('main', ['news' => $news, 'category' => $category]);
+        return view('main',
+            [
+                'news' => $news,
+                'category' => $category,
+                'lastNews' => $lastNews,
+                'randomNews' => $randomNews,
+                'comment' => $comment,
+            ]);
     }
 }

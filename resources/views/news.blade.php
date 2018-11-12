@@ -20,12 +20,12 @@
                     @foreach($news as $item)
                     <div class="blog-post">
                         <!-- Title -->
-                        <h1><a href="blog-post.html">{{$item->news_title}}</a></h1>
+                        <h1><a href="/news-post/{{$item->id}}">{{$item->news_title}}</a></h1>
                         <!-- Meta -->
                         <div class="blog-meta">
                             <div class="meta-item">
                                 <div class="meta-title published">Дата:</div>
-                                <a href="#">{{$item->created_at}}</a></div>
+                                <a href="#">{{date('d.m.Y', strtotime($item->created_at))}}</a></div>
                             <div class="meta-item">
                                 <div class="meta-title views">Просмотры:</div>
                                 <a href="#">{{$item->views}}</a></div>
@@ -128,24 +128,23 @@
 
 
                         <!-- Post -->
-
+                        @foreach($lastNews as $last)
                         <div class="post">
                             <!-- Image Column -->
                             <div class="img-column">
-                                <a href="blog-post.html" class="image-link mini"><img alt=""
-                                                                                      src="images\placeholders\preview9-mini.jpg"
+                                <a href="news-post/{{$last->id}}" class="image-link mini"><img alt=""
+                                                                                      src="{{$last->news_preview}}"
                                                                                       class="fullwidth"></a>
                             </div>
                             <!-- Content Column -->
                             <div class="content-column">
                                 <!-- Post Title -->
-                                <h3 class="sub-title"><a href="blog-post.html">Взаимодействие корпорации и клиента
-                                        экономит баинг и селлинг.</a></h3>
+                                <h3 class="sub-title"><a href="news-post/{{$last->id}}">{{$last->news_short_content}}</a></h3>
                                 <!-- Date -->
-                                <div class="date">31 августа 2016</div>
+                                <div class="date">{{date('d.m.Y', strtotime($last->created_at))}}</div>
                             </div>
                         </div>
-
+                        @endforeach
                         <!-- END Post -->
 
                     </div>

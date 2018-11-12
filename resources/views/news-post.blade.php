@@ -130,7 +130,7 @@
                             </div>
                             <!-- Date -->
                             <div class="date">
-                                {{$item->created_at}}
+                                {{date('d.m.Y', strtotime($item->created_at))}}
                             </div>
                             <!-- Message -->
                             <div class="message">
@@ -243,71 +243,24 @@
 
 
                         <!-- Post -->
-
+                        @foreach($lastNews as $last)
                         <div class="post">
                             <!-- Image Column -->
                             <div class="img-column">
-                                <a href="blog-post.html" class="image-link mini"><img alt=""
-                                                                                      src="images\placeholders\preview9-mini.jpg"
+                                <a href="news-post/{{$last->id}}" class="image-link mini"><img alt=""
+                                                                                      src="{{asset($last->news_preview)}}"
                                                                                       class="fullwidth"></a>
                             </div>
                             <!-- Content Column -->
                             <div class="content-column">
                                 <!-- Post Title -->
-                                <h3 class="sub-title"><a href="blog-post.html">Взаимодействие корпорации и клиента
-                                        экономит баинг и селлинг.</a></h3>
+                                <h3 class="sub-title"><a href="news-post/{{$last->id}}">{{$last->short_content}}</a></h3>
                                 <!-- Date -->
-                                <div class="date">31 августа 2016</div>
+                                <div class="date">{{date('d.m.Y', strtotime($last->created_at))}}</div>
                             </div>
                         </div>
-
+                        @endforeach
                         <!-- END Post -->
-
-
-                        <!-- Post -->
-
-                        <div class="post">
-                            <!-- Image Column -->
-                            <div class="img-column">
-                                <a href="blog-post.html" class="image-link mini"><img alt=""
-                                                                                      src="images\placeholders\preview11-mini.jpg"
-                                                                                      class="fullwidth"></a>
-                            </div>
-                            <!-- Content Column -->
-                            <div class="content-column">
-                                <!-- Post Title -->
-                                <h3 class="sub-title"><a href="blog-post.html">Взаимодействие корпорации и клиента
-                                        экономит баинг и селлинг.</a></h3>
-                                <!-- Date -->
-                                <div class="date">31 августа 2016</div>
-                            </div>
-                        </div>
-
-                        <!-- END Post -->
-
-
-                        <!-- Post -->
-
-                        <div class="post">
-                            <!-- Image Column -->
-                            <div class="img-column">
-                                <a href="blog-post.html" class="image-link mini"><img alt=""
-                                                                                      src="images\placeholders\preview8-mini.jpg"
-                                                                                      class="fullwidth"></a>
-                            </div>
-                            <!-- Content Column -->
-                            <div class="content-column">
-                                <!-- Post Title -->
-                                <h3 class="sub-title"><a href="blog-post.html">Взаимодействие корпорации и клиента
-                                        экономит баинг и селлинг.</a></h3>
-                                <!-- Date -->
-                                <div class="date">31 августа 2016</div>
-                            </div>
-                        </div>
-
-                        <!-- END Post -->
-
-
                     </div>
 
                     <!-- END Popular Posts -->

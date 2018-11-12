@@ -217,7 +217,7 @@ $(document).ready(function(){
                         <td>{{$item->news_title}}</td>
                         <td>{{$item->news_short_content}}</td>
                         <td>{{$item->news_author}}</td>
-                        <td><img src="{{$item->news_preview}}" class="avatar" alt="preview"></td>
+                        <td><img src="{{asset($item->news_preview)}}" class="avatar" alt="preview"></td>
                         <td>{{$item->news_code}}</td>
                         <td>{{$item->news_content}}</td>
                         <td>{{$item->news_day}}</td>

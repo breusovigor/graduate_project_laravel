@@ -169,11 +169,11 @@
                     @foreach($news as $item)
                     <li class="column-one-fourth portfolio-item branding">
                         <!-- Image -->
-                        <a href="#" class="image-link"><img alt="" src="{{$item->news_preview}}"
+                        <a href="/news-post/{{$item->id}}" class="image-link"><img alt="" src="{{$item->news_preview}}"
                                                             class="fullwidth">
                         </a>
                         <!-- Title -->
-                        <h3><a href="#">{{$item->news_title}}</a></h3>
+                        <h3><a href="/news-post/{{$item->id}}">{{$item->news_title}}</a></h3>
                         <!-- Tags -->
                         <div class="tags">{{$item->category->category_name}}</div>
                     </li>
@@ -196,23 +196,23 @@
                         <ul id="blog-carousel" class="slider-container">
 
                             <!-- One Fourth -->
-
+                            @foreach($lastNews as $item)
                             <li class="column-one-fourth">
                                 <!-- Image -->
-                                <a href="blog-post.html" class="image-link"><img alt=""
-                                                                                 src="images\placeholders\preview9.jpg"
+                                <a href="/news-post/{{$item->id}}" class="image-link"><img alt=""
+                                                                                 src="{{asset($item->news_preview)}}"
                                                                                  class="fullwidth">
                                 </a>
                                 <!-- Title -->
-                                <h3><a href="blog-post.html">Заголовок новости на сайте</a></h3>
+                                <h3><a href="/news-post/{{$item->id}}">{{$item->news_title}}</a></h3>
                                 <!-- Date -->
-                                <div class="date">31 августа 2016</div>
+                                <div class="date">{{date('d.m.Y', strtotime($item->created_at))}}</div>
                                 <!-- Excerpt -->
-                                <p>Интересно отметить, что каждая сфера рынка притягивает план размещения. </p>
+                                <p>{{$item->news_short_content}}</p>
                                 <!-- Read More Link -->
-                                <a href="blog-post.html">Подробнее</a>
+                                <a href="/news-post/{{$item->id}}">Подробнее</a>
                             </li>
-
+                            @endforeach
                             <!-- END One Fourth -->
 
                         </ul>
@@ -227,44 +227,21 @@
                     </div>
                     <div class="carousel">
                         <ul id="testimonials-carousel" class="slider-container">
-
                             <!-- Testimonial 1 -->
+                            @foreach($comment as $item)
                             <li class="column-one-fourth">
                                 <!-- Text -->
                                 <div class="testimonial-text">
-                                    <p>Тактика выстраивания отношений с коммерсчекими агентами стремительно
-                                        развивает
-                                        стратегический нестандартный подход.</p>
+                                    <p>{{$item->comment_text}}</p>
                                 </div>
                                 <!-- Name -->
                                 <div class="testimonial-name">
-                                    Джон Доу
+                                    {{$item->name}}
                                 </div>
                                 <!-- Company URL -->
-                                <div class="testimonial-link">
-                                    <a href="#">Посетитель</a>
-                                </div>
                             </li>
+                            @endforeach
                             <!-- END Testimonial 1 -->
-
-                            <!-- Testimonial 2 -->
-                            <li class="column-one-fourth">
-                                <!-- Text -->
-                                <div class="testimonial-text">
-                                    <p>Тактика выстраивания отношений с коммерсчекими агентами стремительно
-                                        развивает
-                                        стратегический нестандартный подход.</p>
-                                </div>
-                                <!-- Name -->
-                                <div class="testimonial-name">
-                                    Джон Доу
-                                </div>
-                                <!-- Company URL -->
-                                <div class="testimonial-link">
-                                    <a href="#">Посетитель</a>
-                                </div>
-                            </li>
-                            <!-- END Testimonial 2 -->
                         </ul>
                     </div>
                 </div>

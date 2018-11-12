@@ -61,12 +61,37 @@
                     </li>
                     <li><a href="/about">О компании</a>
                     </li>
-                    <li><a href="/portfolio">Проекты</a>
+                    <li><a href="/projects">Проекты</a>
                     </li>
                     <li><a href="/news">Новости</a>
                     </li>
                     <li><a href="/contact">Контакты</a>
                     </li>
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Вход') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                            @endif
+                        </li>
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" href="#" role="button">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">&nbsp
+                                {{ __('Выход') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                            </form>
+                        </li>
+                    @endguest
                 </ul>
 
                 <a href="#" class="mobilenav-click">
@@ -186,25 +211,14 @@
                     <!-- Four Columns -->
 
                     <div class="column-container">
-
+                        @foreach ($randomNews as $item)
                         <div class="column-one-fourth">
                             <img alt="" src="images\topbar\logo_white.png" height="17" width="57" class="logo">
-                            <p>Маркетингово-ориентированное издание, как следует из вышесказанного, редко
-                                соответствует рыночным ожиданиям.</p>
-                            <p>Психологическая среда, безусловно, порождает продуктовый ассортимент.</p>
-                            <p><a href="about.html">Читать далее</a>
+                            <p>{{$item->news_content}}</p>
+                            <p><a href="/news-post/{{$item->id}}">Читать далее</a>
                             </p>
                         </div>
-
-                        <div class="column-one-fourth">
-                            <img alt="" src="images\topbar\logo_white.png" height="17" width="57" class="logo">
-                            <p>Маркетингово-ориентированное издание, как следует из вышесказанного, редко
-                                соответствует рыночным ожиданиям.</p>
-                            <p>Психологическая среда, безусловно, порождает продуктовый ассортимент.</p>
-                            <p><a href="about.html">Читать далее</a>
-                            </p>
-                        </div>
-
+                        @endforeach
                         <div class="column-one-fourth">
                             <h3>Галерея</h3>
                             <div class="footer-flickr-container">
@@ -255,15 +269,15 @@
                     <div class="footer-lower-container">
 
                         <ul class="footer-lower">
-                            <li><a href="index.html">Главная</a>
+                            <li><a href="/">Главная</a>
                             </li>
-                            <li><a href="about.html">О нас</a>
+                            <li><a href="/about">О нас</a>
                             </li>
-                            <li><a href="portfolio.html">Проекты</a>
+                            <li><a href="/projects">Проекты</a>
                             </li>
-                            <li><a href="blog.html">Новости</a>
+                            <li><a href="/news">Новости</a>
                             </li>
-                            <li><a href="contact.html">Контакты</a>
+                            <li><a href="/contact">Контакты</a>
                             </li>
                         </ul>
 

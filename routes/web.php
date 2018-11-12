@@ -20,25 +20,24 @@ Route::get('/contact',  'ContactController@index');
 Route::post('/contact',  'ContactController@send')->name('contact');
 
 Route::get('/about', function () {
-    return view('about');
+    $randomNews = News::all()->random(2);
+    return view('about', ['randomNews' => $randomNews]);
 });
 
 Route::get('/news',  'NewsController@index');
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/news', function (Request $request) {
-        $news = News::paginate(5);
-        foreach ($news as $item) {
-        }
-        return view('admin', ['news' => $news]);
-    });
-    Route::get('news/create', 'AdminController@index');
-    Route::post('news/create', 'AdminController@create');
+    Route::resource('/news', 'AdminController');
+
+//    Route::resources('news/create', 'AdminController');
+//    Route::post('/create', 'AdminController@create');
     //Route::get('users', 'AdminController@index');
 });
 
 Route::get('news-post/{id}', 'NewsController@getOneNews');
 Route::post('news-post/{id}', 'CommentController@sendComment')->name('comment');
+
+Route::get('/projects', 'ProjectController@index')->name('project');
 
 Auth::routes();
 

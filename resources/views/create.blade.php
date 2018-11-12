@@ -218,14 +218,15 @@
                 </div>
             </div>
         </div>
-        <form action="news/create" method="post" enctype="multipart/form-data">
+        <form action="/admin/news" method="post" enctype="multipart/form-data">
+            @csrf
             <input type="text" name="category_id"> ID категории </br>
             <input type="text" name="title"> Заголовок </br>
             <input type="text" name="short_content"> Краткое описание </br>
             <input type="text" name="author"> Автор </br>
             <input type="file" name="preview"> Изображение </br>
             <input type="text" name="code"> Код </br>
-            <input type="text" name="content"> Контент </br>
+            <input type="text" name="news_content"> Контент </br>
             <input type="submit" name="send">
         </form>
 
