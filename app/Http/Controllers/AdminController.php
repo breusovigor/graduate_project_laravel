@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\News;
 use DB;
 use Illuminate\Support\Facades\Storage;
+use Gate;
 
 class AdminController extends Controller
 {
@@ -16,8 +17,12 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        $news = News::paginate(5);
-        return view('admin', ['news' => $news]);
+        if (Gate::allows('is-admin')) {
+            $news = News::paginate(5);
+            return view('admin', ['news' => $news]);
+        }
+        return ('You no have fucking dostup');
+
     }
 
     /**
@@ -41,10 +46,7 @@ class AdminController extends Controller
     {
 
         if($request->isMethod('post')){
-                $path = $request->file('preview')->store('images', 'public');
-                //dd($path);
-                $moved = Storage::move($path, 'public/images/placeholders');
-            dd($moved);
+                $path = $request->file('preview')->store('images/placeholders', 'local_public');
                 $news = new News;
                 $news->category_id = $request->category_id;
                 $news->news_title = $request->title;

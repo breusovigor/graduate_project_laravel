@@ -2115,9 +2115,9 @@ i {
 #portfolio {
 	overflow: hidden;
 }
-#portfolio .portfolio-item {
-	display: none;
-}
+/*#portfolio .portfolio-item {*/
+	/*display: none;*/
+/*}*/
 /* -------------------------------- */
 /* Filtering
 /* -------------------------------- */

@@ -37,8 +37,7 @@
 
                         <div class="blog-content">
                             <!-- Paragraph -->
-                            <p>Правда, специалисты отмечают, что формирование имиджа транслирует баинг и селлинг.
-                                Медиабизнес спонтанно отталкивает ролевой conversion rate.</p>
+                            <p>{{$news->news_short_content}}</p>
 
                             <div class="media">
                                 <div id="portfolio-blog-slider-container">
