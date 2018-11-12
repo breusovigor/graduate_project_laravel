@@ -21,7 +21,7 @@ class AdminController extends Controller
             $news = News::paginate(5);
             return view('admin', ['news' => $news]);
         }
-        return ('You no have fucking dostup');
+        return redirect('/');
 
     }
 
